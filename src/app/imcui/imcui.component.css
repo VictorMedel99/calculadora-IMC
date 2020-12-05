@@ -1,0 +1,29 @@
+.peso-bajo{
+    Background:#01b520;
+
+}
+
+.peso-normal{
+    Background: #50df2f;
+
+}
+
+.sobrepeso{
+    Background: #ffff01;
+
+}
+
+.obecidad-1{
+    Background: #ffc801;
+
+}
+
+.obecidad-2{
+    Background: #ff9000;
+
+}
+
+.obecidad-3{
+    Background: #ff2100;
+
+}
