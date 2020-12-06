@@ -43,7 +43,7 @@ export class IMCUIComponent implements OnInit {
       myresult = IMCMujer(this.operadorPeso, this.operadorEstatura);
       this.pesomin= pesoMinMujer(this.operadorEdad,this.operadorEstatura);
       this.pesomax= pesoMaxMujer(this.operadorEdad,this.operadorEstatura);
-      this.result = `IMC: ${myresult}\nEstado (Adultos): ${EstadoHombre(myresult)}\n\nPeso Mínimo ideal según tu edad e IMC: ${this.pesomin}\nPeso Máximo ideal según tu edad e IMC: ${this.pesomax}`;
+      this.result = `IMC: ${myresult}\nEstado (Adultos): ${EstadoMujer(myresult)}\n\nPeso Mínimo ideal según tu edad e IMC: ${this.pesomin}\nPeso Máximo ideal según tu edad e IMC: ${this.pesomax}`;
     }
   }
 
