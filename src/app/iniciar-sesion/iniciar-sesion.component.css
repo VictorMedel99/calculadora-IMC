@@ -1,0 +1,25 @@
+#cuerpo{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.fondo_formulario{
+  background-color:#000000;
+}
+
+.fondo_formulario h1,h5{
+    font-weight: bold;
+    padding: 10px;
+  }
+
+.texto_verde{
+  color: #ffffff;
+}
+.btn_spotify{
+  background: #000000;
+  color: #ffffff;
+  font-size: 1.5em;
+  width: 50%;
+  border-radius: 50px;
+}
