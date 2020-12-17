@@ -1,5 +1,5 @@
 export class UsersApi {
-    nombreUsuario : string;
-    contrasenia: string;
+    username: string;
+    password: string;
 
   }

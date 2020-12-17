@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../servicios/users.service';
 import { UsersApi } from "../models/usersapi";
 import { StorageService } from "../servicios/storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -16,7 +17,8 @@ export class IniciarSesionComponent implements OnInit {
 
   constructor(
     private usersService: UsersService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,8 +33,8 @@ export class IniciarSesionComponent implements OnInit {
 
     } else {
 
-      mydata.nombreUsuario = this.nombreUsuario;
-      mydata.contrasenia = this.contrasenia;
+      mydata.username = this.nombreUsuario;
+      mydata.password = this.contrasenia;
 
       return this.usersService.loginUser(mydata)
         .subscribe((data: any) => {
@@ -41,7 +43,7 @@ export class IniciarSesionComponent implements OnInit {
 
           this.result = data.accessToken;
           alert(data.accessToken);
-          // this.router.navigate(['/']);
+          this.router.navigate(['usuarios']);
 
         })
 

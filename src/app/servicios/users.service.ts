@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 //import { ResponseApi } from '../models/responseapi';
 import { UsersApi } from '../models/usersapi';
+import { UsersRegisterApi } from "../models/usersregisterapi";
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -37,6 +38,14 @@ export class UsersService {
     )
   }
 
+  registerUser(userRegisterApi): Observable<UsersRegisterApi> {
+    console.log(JSON.stringify(userRegisterApi));
+    return this.http.post<UsersRegisterApi>(this.apiURL + 'api/auth/signup', JSON.stringify(userRegisterApi), this.httpOptions)
+    .pipe(
+      retry(1),
+    )
+  }
+
   // Error handling 
   handleError(error) {
      let errorMessage = '';
@@ -59,7 +68,7 @@ export class UsersService {
     } else {
       // Get server-side error
       //errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-      alert('USUARIO Y CONTRASEÑA INCORRECTOS');
+      alert('Datos INCORRECTOS');
     }
     //window.alert(errorMessage);
     return throwError(errorMessage);
