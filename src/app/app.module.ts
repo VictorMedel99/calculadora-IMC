@@ -10,6 +10,9 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { UIUsuarioComponent } from './uiusuario/uiusuario.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { StorageService } from "../app/servicios/storage.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +25,10 @@ import { UIUsuarioComponent } from './uiusuario/uiusuario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

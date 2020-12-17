@@ -6,18 +6,20 @@
         <form>
             <div class="form-group">
                 <h5>Correo electrónico:</h5>
-                <input type="email" id="correo" class="form-control" #inputCorreo placeholder="Ingresa tu Nombre de Usuario">
+                <input id="nombreUsuario" [(ngModel)]="nombreUsuario" type="text" class="form-control operator1" name="operator1" placeholder="Ingresa tu Nombre de Usuario">
             </div>
             <div class="form-group">
                 <h5>Contraseña:</h5>
-                <input type="password" id="contra" class="form-control" #inputContra placeholder="Ingresa tu Contraseña">
+                <input id="contrasenia" [(ngModel)]="contrasenia"  type="password" class="form-control operator2" name="operator2" placeholder="Ingresa tu Contraseña">
             </div>
             <div class="text-center">
                 <p>¿No tienes cuenta? <a href="/registrate"> Regístra tu cuenta</a></p>
             </div>
             <div class="text-center">
-                <input type="submit" value="Iniciar" class="btn btn-lg btn_spotify mt-3">
+                <input type="submit" value="Iniciar" class="btn btn-lg btn_spotify mt-3" (click)="iniciarSesion()">
             </div>
         </form>
     </div>
 </div>
+
+<span class="result">{{ result }}</span>
