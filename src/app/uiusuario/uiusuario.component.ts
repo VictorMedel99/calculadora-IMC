@@ -60,11 +60,24 @@ export class UIUsuarioComponent implements OnInit {
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
     mydata.username="victor";
-    mydata.id="1";
+    mydata.id=1;
 
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
+          alert(JSON.stringify(data));
         })
+  }
+
+  getHistorial(){
+    this.imcService.getImcs()
+      .subscribe(
+        res => {
+          this.historial = res;
+          console.log(this.historial);
+        },
+        err => console.log(err)
+      )
+
   }
 
 }
