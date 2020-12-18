@@ -1,26 +1,96 @@
-<app-imcui></app-imcui>
-<div>
-  <div id="btn-operations" class="btn-group btn-group-lg">
-    <button type="button" class="btn btn-primary calculaIMC-button" style="text-align:center">Guarda tu Resultado</button>
-  </div>
-</div>
+<main>
+  <section class="contenedor calculadora-inputs">
+    <h2 class="title">Ingresa los datos</h2>
+    <section class="contenido-calculadora-inputs">
+      <h3><span>1</span>Genero</h3>
+      <div id="inputs-operators" class="input-group">
+        <input id="operadorGenero" [(ngModel)]="operadorGenero" type="text" class="form-control operadorGenero"
+          name="operadorGenero" placeholder="hombre/mujer">
+      </div>
+      <h3><span>2</span>Edad</h3>
+      <div id="inputs-operators" class="input-group">
+        <input id="operadorEdad" [(ngModel)]="operadorEdad" type="number" class="form-control operadorEdad"
+          name="operadorEdad">
+      </div>
+      <h3><span>3</span>Estatura (Metros)</h3>
+      <div class="input-group">
+        <input id="operadorEstatura" [(ngModel)]="operadorEstatura" type="number" class="form-control operadorEstatura"
+          name="operadorEstatura">
+      </div>
+      <h3><span>4</span>Peso</h3>
+      <div id="inputs-operators" class="input-group">
+        <input id="operadorPeso" [(ngModel)]="operadorPeso" type="number" class="form-control operadorPeso"
+          name="operadorPeso">
+      </div>
+      <section class="operacionesIMC">
+        <button type="button" class="btn btn-primary calculaIMC-button" (click)="calculaIMC()" >Calcula tu IMC</button>
+        <button id="guardarIMC" type="button" class="btn btn-primary calculaIMC-button" >Guarda tu Resultado</button>
+      </section>
+    </section>
+  </section>
+
+  <section class="contenedor resultados">
+    <h2 class="title">Resultado</h2>
+    <section class="contenido-resultado">
+      <div id="result-operations" class="input-group">
+        <div class="form-group">
+          <label for="lblresultado">Tu resultado es : </label>
+          <textarea id="result" class="form-control" id="lblresultado" rows="3">{{ result }}</textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="progress-imc">
+      <h2>IMC +18</h2>
+      <ul class="items-imc">
+        <li>
+          <a href="#">Bajo peso</a>
+          <a href="#">Peso normal</a>
+          <a href="#">Sobrepeso</a>
+          <a href="#">Obesidad 1</a>
+          <a href="#">Obesidad 2</a>
+          <a href="#">Obesidad morbida</a>
+        </li>
+      </ul>
+      <div class="progress progress-striped active">
+        <div class="progress-bar peso-bajo" style="width: 16.6%">
+          <span>0,0 - 18.4</span>
+        </div>
+        <div class="progress-bar peso-normal" style="width: 16.6%">
+          <span>18.5 - 24.9</span>
+        </div>
+        <div class="progress-bar sobrepeso" style="width: 16.6%">
+          <span>25.0 - 29.9</span>
+        </div>
+        <div class="progress-bar obecidad-1" style="width: 16.6%">
+          <span>30.0 - 34.9</span>
+        </div>
+        <div class="progress-bar obecidad-2" style="width: 16.8%">
+          <span>35.0 - 39.9</span>
+        </div>
+        <div class="progress-bar obecidad-3" style="width: 16.7%">
+          <span>40+</span>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+
 <h1 class="principal">Registros</h1>
 <table id="historial" class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">IMC</th>
-        <th scope="col">Estado Actual</th>
-        <th scope="col">Peso Minimo Ideal</th>
-        <th scope="col">Peso Maximo Ideal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">IMC</th>
+      <th scope="col">Estado Actual</th>
+      <th scope="col">Peso Minimo Ideal</th>
+      <th scope="col">Peso Maximo Ideal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      aqui se imprime los registros
+    </tr>
+  </tbody>
+</table>

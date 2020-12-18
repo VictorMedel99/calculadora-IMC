@@ -1,5 +1,5 @@
 export class ImcApi {
-    id : string;
+    nombreUsuario : string;
     imc: string;
     estado: string;
     peso_min: string;

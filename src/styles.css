@@ -39,7 +39,7 @@ header{
 }
 
 header h1.titulo{
-    padding: 40px 0;
+    padding: 30px 0;
     color: #fff;
     text-align: center;
 }
@@ -95,8 +95,9 @@ header .info-header{
 
 /* contenedor calculadora inputs */
 .contenido-calculadora-inputs{
-    padding: 40px;
+    padding: 30px;
     width: 48%;
+    margin-right: auto;
 }
 
 .contenido-calculadora-inputs h3{
@@ -123,6 +124,7 @@ header .info-header{
     }
 
 #btn-operations{
+    padding: 10px;
     height: 30px;
 }
 
@@ -132,13 +134,15 @@ header .info-header{
 
 /* contenedor calculadora resultados */
 .contenido-resultado{
-    padding: 100px 250px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .contenido-resultado textarea{
-    margin-left: auto;
-    margin-right: auto;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     text-align: center;
     font-size: 25px;
     color: #4286f4;
@@ -156,7 +160,7 @@ header .info-header{
 
 .progress-imc h2{
     color: #642a73;
-    padding: 40px;
+    padding: 20px;
 }
 
 .progress-imc div{

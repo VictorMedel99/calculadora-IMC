@@ -7,115 +7,116 @@
   </section>
 </header>
 <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-  style="height: 100%; width: 100%;">
-  <path d="M-17.77,59.70 C139.67,148.52 364.27,-48.84 500.84,66.61 L500.00,150.00 L0.00,150.00 Z"
-    style="stroke: none; fill: #fff;"></path>
-</svg></div>
+    style="height: 100%; width: 100%;">
+    <path d="M-17.77,59.70 C139.67,148.52 364.27,-48.84 500.84,66.61 L500.00,150.00 L0.00,150.00 Z"
+      style="stroke: none; fill: #fff;"></path>
+  </svg></div>
 <main>
-    <section class="contenedor calculadora-inputs">
-      <h2 class="title">Ingresa los datos</h2>
-      <section class="contenido-calculadora-inputs">
-        <h3><span>1</span>Genero</h3>
-        <div id="inputs-operators" class="input-group">
-          <input id="operadorGenero" [(ngModel)]="operadorGenero" type="text" class="form-control operadorGenero"
-            name="operadorGenero" placeholder="hombre/mujer">
-        </div>
-        <h3><span>2</span>Edad</h3>
-        <div id="inputs-operators" class="input-group">
-          <input id="operadorEdad" [(ngModel)]="operadorEdad" type="number" class="form-control operadorEdad"
-            name="operadorEdad">
-        </div>
-        <h3><span>3</span>Estatura (Metros)</h3>
-        <div class="input-group">
-          <input id="operadorEstatura" [(ngModel)]="operadorEstatura" type="number" class="form-control operadorEstatura"
-            name="operadorEstatura">
-        </div>
-        <h3><span>4</span>Peso</h3>
-        <div id="inputs-operators" class="input-group">
-          <input id="operadorPeso" [(ngModel)]="operadorPeso" type="number" class="form-control operadorPeso"
-            name="operadorPeso">
-        </div>
-        <div id="btn-operations" class="btn-group btn-group-lg">
-          <button type="button" class="btn btn-primary calculaIMC-button" (click)="calculaIMC()" style="text-align:center">Calcula tu IMC</button>
-        </div>
-      </section>
+  <section class="contenedor calculadora-inputs">
+    <h2 class="title">Ingresa los datos</h2>
+    <section class="contenido-calculadora-inputs">
+      <h3><span>1</span>Genero</h3>
+      <div id="inputs-operators" class="input-group">
+        <input id="operadorGenero" [(ngModel)]="operadorGenero" type="text" class="form-control operadorGenero"
+          name="operadorGenero" placeholder="hombre/mujer">
+      </div>
+      <h3><span>2</span>Edad</h3>
+      <div id="inputs-operators" class="input-group">
+        <input id="operadorEdad" [(ngModel)]="operadorEdad" type="number" class="form-control operadorEdad"
+          name="operadorEdad">
+      </div>
+      <h3><span>3</span>Estatura (Metros)</h3>
+      <div class="input-group">
+        <input id="operadorEstatura" [(ngModel)]="operadorEstatura" type="number" class="form-control operadorEstatura"
+          name="operadorEstatura">
+      </div>
+      <h3><span>4</span>Peso</h3>
+      <div id="inputs-operators" class="input-group">
+        <input id="operadorPeso" [(ngModel)]="operadorPeso" type="number" class="form-control operadorPeso"
+          name="operadorPeso">
+      </div>
+      <div id="btn-operations" class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-primary calculaIMC-button" (click)="calculaIMC()"
+          style="text-align:center">Calcula tu IMC</button>
+      </div>
     </section>
-  
-    <section class="contenedor resultados">
-      <h2 class="title">Resultado</h2>
-      <section class="contenido-resultado">
-        <div id="result-operations" class="input-group">
-          <div class="form-group">
-            <label for="lblresultado">Tu resultado es : </label>
-            <textarea id="result" class="form-control" id="lblresultado" rows="3">{{ result }}</textarea>
-          </div>
-       </div>
-      </section>
-      
-      <section class="progress-imc">
-        <h2>IMC Hombres +18</h2>
-        <ul class="items-imc">
-          <li>
-            <a href="#">Bajo peso</a>
-            <a href="#">Peso normal</a>
-            <a href="#">Sobrepeso</a>
-            <a href="#">Obesidad 1</a>
-            <a href="#">Obesidad 2</a>
-            <a href="#">Obesidad morbida</a>
-          </li>
-        </ul>
-        <div class="progress progress-striped active">
-          <div class="progress-bar peso-bajo" style="width: 16.6%">
-            <span>0,0 - 18.4</span>
-          </div>
-          <div class="progress-bar peso-normal" style="width: 16.6%">
-            <span>18.5 - 24.9</span>
-          </div>
-          <div class="progress-bar sobrepeso" style="width: 16.6%">
-            <span>25.0 - 29.9</span>
-          </div>
-          <div class="progress-bar obecidad-1" style="width: 16.6%">
-            <span>30.0 - 34.9</span>
-          </div>
-          <div class="progress-bar obecidad-2" style="width: 16.8%">
-            <span>35.0 - 39.9</span>
-          </div>
-          <div class="progress-bar obecidad-3" style="width: 16.7%">
-            <span>40+</span>
-          </div>
+  </section>
+
+  <section class="contenedor resultados">
+    <h2 class="title">Resultado</h2>
+    <section class="contenido-resultado">
+      <div id="result-operations" class="input-group">
+        <div class="form-group">
+          <label for="lblresultado">Tu resultado es : </label>
+          <textarea id="result" class="form-control" id="lblresultado" rows="3">{{ result }}</textarea>
         </div>
-        <br>
-        <h2>IMC Mujeres +18</h2>
-        <ul class="items-imc">
-          <li>
-            <a href="#">Bajo peso</a>
-            <a href="#">Peso normal</a>
-            <a href="#">Sobrepeso</a>
-            <a href="#">Obesidad 1</a>
-            <a href="#">Obesidad 2</a>
-            <a href="#">Obesidad morbida</a>
-          </li>
-        </ul>
-        <div class="progress progress-striped active">
-          <div class="progress-bar peso-bajo" style="width: 16.6%">
-            <span>0,0 - 18.4</span>
-          </div>
-          <div class="progress-bar peso-normal" style="width: 16.6%">
-            <span>18.5 - 24.9</span>
-          </div>
-          <div class="progress-bar sobrepeso" style="width: 16.7%">
-            <span>25.0 - 29.9</span>
-          </div>
-          <div class="progress-bar obecidad-1" style="width: 16.6%">
-            <span>30.0 - 34.9</span>
-          </div>
-          <div class="progress-bar obecidad-2" style="width: 16.8%">
-            <span>35.0 - 39.9</span>
-          </div>
-          <div class="progress-bar obecidad-3" style="width: 16.7%">
-            <span>40+</span>
-          </div>
-        </div>
-      </section>
+      </div>
     </section>
-  </main>
+
+    <section class="progress-imc">
+      <h2>IMC Hombres +18</h2>
+      <ul class="items-imc">
+        <li>
+          <a href="#">Bajo peso</a>
+          <a href="#">Peso normal</a>
+          <a href="#">Sobrepeso</a>
+          <a href="#">Obesidad 1</a>
+          <a href="#">Obesidad 2</a>
+          <a href="#">Obesidad morbida</a>
+        </li>
+      </ul>
+      <div class="progress progress-striped active">
+        <div class="progress-bar peso-bajo" style="width: 16.6%">
+          <span>0,0 - 18.4</span>
+        </div>
+        <div class="progress-bar peso-normal" style="width: 16.6%">
+          <span>18.5 - 24.9</span>
+        </div>
+        <div class="progress-bar sobrepeso" style="width: 16.6%">
+          <span>25.0 - 29.9</span>
+        </div>
+        <div class="progress-bar obecidad-1" style="width: 16.6%">
+          <span>30.0 - 34.9</span>
+        </div>
+        <div class="progress-bar obecidad-2" style="width: 16.8%">
+          <span>35.0 - 39.9</span>
+        </div>
+        <div class="progress-bar obecidad-3" style="width: 16.7%">
+          <span>40+</span>
+        </div>
+      </div>
+      <br>
+      <h2>IMC Mujeres +18</h2>
+      <ul class="items-imc">
+        <li>
+          <a href="#">Bajo peso</a>
+          <a href="#">Peso normal</a>
+          <a href="#">Sobrepeso</a>
+          <a href="#">Obesidad 1</a>
+          <a href="#">Obesidad 2</a>
+          <a href="#">Obesidad morbida</a>
+        </li>
+      </ul>
+      <div class="progress progress-striped active">
+        <div class="progress-bar peso-bajo" style="width: 16.6%">
+          <span>0,0 - 18.4</span>
+        </div>
+        <div class="progress-bar peso-normal" style="width: 16.6%">
+          <span>18.5 - 24.9</span>
+        </div>
+        <div class="progress-bar sobrepeso" style="width: 16.7%">
+          <span>25.0 - 29.9</span>
+        </div>
+        <div class="progress-bar obecidad-1" style="width: 16.6%">
+          <span>30.0 - 34.9</span>
+        </div>
+        <div class="progress-bar obecidad-2" style="width: 16.8%">
+          <span>35.0 - 39.9</span>
+        </div>
+        <div class="progress-bar obecidad-3" style="width: 16.7%">
+          <span>40+</span>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
