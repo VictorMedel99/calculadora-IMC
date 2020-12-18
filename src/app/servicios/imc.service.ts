@@ -34,7 +34,7 @@ export class ImcService {
     console.log(JSON.stringify(imcApi));
     console.log(JSON.stringify(this.httpOptions));
 
-    return this.http.post<ImcApi>(this.apiURL + 'pesos', JSON.stringify(imcApi), this.httpOptions)
+    return this.http.post<ImcApi>(this.apiURL + 'calculator/pesos/', JSON.stringify(imcApi), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.MessageError)

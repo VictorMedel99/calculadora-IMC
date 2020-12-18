@@ -20,6 +20,7 @@ import {ImcService} from '../servicios/imc.service';
 })
 export class UIUsuarioComponent implements OnInit {
 
+  imc=0;
   result;
   pesomin="";
   pesomax="";
@@ -36,35 +37,34 @@ export class UIUsuarioComponent implements OnInit {
   }
 
   calculaIMC() {
-    let myresult = 0;
     if (this.operadorGenero == "hombre") {
-      myresult = IMCHombre(this.operadorPeso, this.operadorEstatura);
+      this.imc = IMCHombre(this.operadorPeso, this.operadorEstatura);
       this.pesomin= pesoMinHombre(this.operadorEdad,this.operadorEstatura);
       this.pesomax= pesoMaxHombre(this.operadorEdad,this.operadorEstatura);
-      this.Estado=EstadoHombre(myresult);
-      this.result = `IMC: ${myresult}\nEstado (Adultos): ${this.Estado}\n\nPeso Mínimo ideal según tu edad e IMC: ${this.pesomin}\nPeso Máximo ideal según tu edad e IMC: ${this.pesomax}`;
+      this.Estado=EstadoHombre(this.imc);
+      this.result = `IMC: ${this.imc}\nEstado (Adultos): ${this.Estado}\n\nPeso Mínimo ideal según tu edad e IMC: ${this.pesomin}\nPeso Máximo ideal según tu edad e IMC: ${this.pesomax}`;
 
     } else {
-      myresult = IMCMujer(this.operadorPeso, this.operadorEstatura);
+      this.imc = IMCMujer(this.operadorPeso, this.operadorEstatura);
       this.pesomin= pesoMinMujer(this.operadorEdad,this.operadorEstatura);
       this.pesomax= pesoMaxMujer(this.operadorEdad,this.operadorEstatura);
-      this.Estado=EstadoMujer(myresult)
-      this.result = `IMC: ${myresult}\nEstado (Adultos): ${this.Estado}\n\nPeso Mínimo ideal según tu edad e IMC: ${this.pesomin}\nPeso Máximo ideal según tu edad e IMC: ${this.pesomax}`;
+      this.Estado=EstadoMujer(this.imc)
+      this.result = `IMC: ${this.imc}\nEstado (Adultos): ${this.Estado}\n\nPeso Mínimo ideal según tu edad e IMC: ${this.pesomin}\nPeso Máximo ideal según tu edad e IMC: ${this.pesomax}`;
     }
   }
 
   guardarIMC(){
     var mydata = new ImcApi;
-    mydata.imc=this.result;
+    mydata.imc=String(this.imc);
     mydata.estado=this.Estado;
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
     mydata.username="victor";
+    mydata.id="1";
 
-    this.imcService.createImc(mydata)
+    return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
         })
-        console.log('Datos guardados');
   }
 
 }
