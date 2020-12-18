@@ -90,19 +90,12 @@
     </tr>
   </thead>
   <tbody>
-<<<<<<< HEAD
     <tr *ngFor = 'let peso of imcApi$'>
-      {{peso.username}}
-=======
-    <tr *ngFor="let res of historial">
-      <th scope="row">1</th>
-      <td>{{res.id}}</td>
-      <td>{{res.username}}</td>
-      <td>{{res.imc}}</td>
-      <td>{{res.estado}}</td>
-      <td>{{peso_min}}</td>
-      <td>{{peso_max}}</td>
->>>>>>> 17b7868d73f2d80c2cc809bae7452e535c6099db
-    </tr>
+      <td>{{peso.id}}</td>
+      <td>{{peso.username}}</td>
+      <td>{{peso.imc}}</td>
+      <td>{{peso.estado}}</td>
+      <td>{{peso.peso_min}}</td>
+      <td>{{peso.peso_max}}</td>
   </tbody>
 </table>

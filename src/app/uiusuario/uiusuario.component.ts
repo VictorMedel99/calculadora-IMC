@@ -29,8 +29,8 @@ export class UIUsuarioComponent implements OnInit {
   operadorEstatura = 0;
   operadorPeso = 0;
   Estado="";
-  historial=[];
-
+/*   historial=[];
+ */
   constructor(private imcService: ImcService) { }
   imcApi$: ImcApi[];
   ngOnInit(): void {
@@ -61,26 +61,22 @@ export class UIUsuarioComponent implements OnInit {
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
     mydata.username="victor";
-<<<<<<< HEAD
-    mydata.id= 5;
-    this.mostrar()
-=======
-    mydata.id=1;
 
->>>>>>> 17b7868d73f2d80c2cc809bae7452e535c6099db
+    mydata.id= 6;
+    this.mostrar()
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
           alert(JSON.stringify(data));
         })
   }
 
-<<<<<<< HEAD
     mostrar(){
       return this.imcService.getPesos()
-      .subscribe(data => this.imcApi$ = data)
+      .subscribe(
+        data => this.imcApi$ = data)
      }
-=======
-  getHistorial(){
+
+/*   getHistorial(){
     this.imcService.getImcs()
       .subscribe(
         res => {
@@ -90,7 +86,6 @@ export class UIUsuarioComponent implements OnInit {
         err => console.log(err)
       )
 
-  }
->>>>>>> 17b7868d73f2d80c2cc809bae7452e535c6099db
+  } */
 
 }
