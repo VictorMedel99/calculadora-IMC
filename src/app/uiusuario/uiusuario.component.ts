@@ -11,6 +11,7 @@ import { pesoMinMujer } from '../IMCMujer/IMCMujer';
 import { pesoMaxMujer } from '../IMCMujer/IMCMujer';
 
 import { ImcApi } from "../models/imcapi";
+import {ImcService} from '../servicios/imc.service';
 
 @Component({
   selector: 'app-uiusuario',
@@ -27,8 +28,9 @@ export class UIUsuarioComponent implements OnInit {
   operadorEstatura = 0;
   operadorPeso = 0;
   Estado="";
+  historial=[];
 
-  constructor() { }
+  constructor(private imcService: ImcService) { }
 
   ngOnInit(): void {
   }
@@ -57,7 +59,12 @@ export class UIUsuarioComponent implements OnInit {
     mydata.estado=this.Estado;
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
-    mydata.nombreUsuario="victor";
+    mydata.username="victor";
+
+    this.imcService.createImc(mydata)
+        .subscribe((data: any) => {
+        })
+        console.log('Datos guardados');
   }
 
 }
