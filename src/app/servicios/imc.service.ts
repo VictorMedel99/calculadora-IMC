@@ -41,6 +41,19 @@ export class ImcService {
     )
   }
 
+  getImcs() {
+    console.log( this.storageService.getSession("userData").token);
+    return this.http.get<any>(this.apiURL+'calculator/pesos/',this.httpOptions)
+    .pipe(
+    retry(1),
+    catchError(this.MessageError)
+    )
+  }
+
+/*   getGeneros(){
+    return this.http.get<any>(this.apiURL + 'calculator/pesos/');
+  } */
+
   // Error handling 
   handleError(error) {
      let errorMessage = '';
