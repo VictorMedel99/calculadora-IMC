@@ -61,29 +61,20 @@ export class UIUsuarioComponent implements OnInit {
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
     mydata.username="victor";
-<<<<<<< HEAD
-    mydata.id= 5;
-=======
-
     mydata.id= 6;
->>>>>>> fdd06fb5b8582104d5396ed57ee3a238dde37d12
     this.mostrar()
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
           alert(JSON.stringify(data));
         })
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> fdd06fb5b8582104d5396ed57ee3a238dde37d12
     mostrar(){
       return this.imcService.getPesos()
       .subscribe(
         data => this.imcApi$ = data)
      }
-<<<<<<< HEAD
-=======
+
 
 /*   getHistorial(){
     this.imcService.getImcs()
@@ -96,6 +87,5 @@ export class UIUsuarioComponent implements OnInit {
       )
 
   } */
->>>>>>> fdd06fb5b8582104d5396ed57ee3a238dde37d12
 
 }
