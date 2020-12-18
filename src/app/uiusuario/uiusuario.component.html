@@ -89,8 +89,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      aqui se imprime los registros
+    <tr *ngFor = 'let peso of imcApi$'>
+      {{peso.username}}
     </tr>
   </tbody>
 </table>

@@ -32,8 +32,9 @@ export class UIUsuarioComponent implements OnInit {
   historial=[];
 
   constructor(private imcService: ImcService) { }
-
+  imcApi$: ImcApi[];
   ngOnInit(): void {
+    this.mostrar()
   }
 
   calculaIMC() {
@@ -60,11 +61,16 @@ export class UIUsuarioComponent implements OnInit {
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
     mydata.username="victor";
-    mydata.id="1";
-
+    mydata.id= 5;
+    this.mostrar()
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
         })
   }
+
+    mostrar(){
+      return this.imcService.getPesos()
+      .subscribe(data => this.imcApi$ = data)
+     }
 
 }

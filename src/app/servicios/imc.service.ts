@@ -68,5 +68,9 @@ export class ImcService {
     //window.alert(errorMessage);
     return throwError(errorMessage);
  }
+ getPesos(): Observable<ImcApi[]> {
+  return this.http.get<ImcApi[]>(this.apiURL+'calculator/pesos',this.httpOptions)
+}
+
 
 }
