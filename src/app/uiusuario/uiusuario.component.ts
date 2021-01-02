@@ -61,11 +61,9 @@ export class UIUsuarioComponent implements OnInit {
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
     mydata.username="victor";
-    mydata.id= 6;
-    this.mostrar()
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
-          alert(JSON.stringify(data));
+          this.mostrar()
         })
   }
 
@@ -74,18 +72,5 @@ export class UIUsuarioComponent implements OnInit {
       .subscribe(
         data => this.imcApi$ = data)
      }
-
-
-/*   getHistorial(){
-    this.imcService.getImcs()
-      .subscribe(
-        res => {
-          this.historial = res;
-          console.log(this.historial);
-        },
-        err => console.log(err)
-      )
-
-  } */
 
 }

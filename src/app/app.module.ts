@@ -12,6 +12,8 @@ import { UIUsuarioComponent } from './uiusuario/uiusuario.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from "../app/servicios/storage.service";
+import {VerifyNavGuard} from './servicios/verify-nav.guard';
+import { NavbarUsuarioComponent } from './navbar-usuario/navbar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { StorageService } from "../app/servicios/storage.service";
     NavbarInicialComponent,
     RegistrarseComponent,
     IniciarSesionComponent,
-    UIUsuarioComponent
+    UIUsuarioComponent,
+    NavbarUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { StorageService } from "../app/servicios/storage.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [StorageService],
+  providers: [StorageService,VerifyNavGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

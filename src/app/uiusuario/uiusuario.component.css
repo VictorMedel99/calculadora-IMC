@@ -54,3 +54,8 @@
     Background: #ff2100;
 
 }
+
+.items-imc li a{
+    color: #3F5EFB;
+    font-weight: lighter;
+}

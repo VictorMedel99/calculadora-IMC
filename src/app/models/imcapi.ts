@@ -4,5 +4,4 @@ export class ImcApi {
     estado: string;
     peso_min: string;
     peso_max: string;
-    id: any;
 }

@@ -41,4 +41,13 @@ export class  StorageService {
     localDeleteByKey(key: string) {
       localStorage.removeItem(key);
     }
+
+    islogged(){
+      return !!localStorage.getItem("token");
+    }
+
+    cerrarSesion(){
+    localStorage.removeItem("token");
+    //this.router.navigate(['/tasks']);
+    }
   }
