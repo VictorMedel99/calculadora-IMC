@@ -43,7 +43,7 @@ export class  StorageService {
     }
 
     islogged(){
-      return !!localStorage.getItem("token");
+      return !!sessionStorage.getItem("token");
     }
 
     cerrarSesion(){
