@@ -6,19 +6,19 @@
         <div class="pl-5 pr-5">
             <div class="form-group">
                 <label for="correo" class="font-weight-bold">Nombre</label>
-                <input type="text" [(ngModel)]="nombre" class="form-control operator1" name="operator1" required placeholder="Ingresa tu Nombre">
+                <input type="text" id="nombre" [(ngModel)]="nombre" class="form-control nombre" name="nombre" required placeholder="Ingresa tu Nombre">
             </div>
             <div class="form-group">
                 <label for="nombre" class="font-weight-bold">Nombre de usuario</label>
-                <input type="text" id="nombreUsuario" [(ngModel)]="nombreUsuario" class="form-control operator2" name="operator2" class="form-control" placeholder="Ingresa tu Nombre de Usuario">
+                <input type="text" id="nombreUsuario" [(ngModel)]="nombreUsuario" class="form-control nombreUsuario" name="nombreUsuario" required placeholder="Ingresa tu Nombre de Usuario">
             </div>
             <div class="form-group">
                 <label for="correo-confirm" class="font-weight-bold">Correo electrónico</label>
-                <input type="email" id="correo" [(ngModel)]="correo" class="form-control operator3" name="operator3" placeholder="nombre@example.com">
+                <input type="email" id="correo" [(ngModel)]="correo" class="form-control correo" name="correo" required placeholder="nombre@example.com">
             </div>
             <div class="form-group">
                 <label for="contra" class="font-weight-bold">Contraseña</label>
-                <input type="password" id="contrasenia" [(ngModel)]="contrasenia" class="form-control operator4" name="operator4" placeholder="Ingresa tu Contraseña">
+                <input type="password" id="contrasenia" [(ngModel)]="contrasenia" class="form-control contrasenia" name="contrasenia" required placeholder="Ingresa tu Contraseña">
             </div>
 
             <div class="form-group text-center">

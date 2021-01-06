@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './users.service';
 import { UsersApi } from "../models/usersapi";
+import { UsersRegisterApi } from "../models/usersregisterapi";
 
 describe('UsersService',() => {
 
@@ -28,6 +29,24 @@ describe('UsersService',() => {
       expect(user.tokenType).toEqual('Bearer');
       done(); //call DoneFn
 
+    });
+
+  });
+
+  it('should create user',  () => {
+    // Arrange
+    const service: UsersService = TestBed.get(UsersService);
+
+    var mydata = new UsersRegisterApi;
+    mydata.name="usuario tdd";
+    mydata.username = "usuario";
+    mydata.email="usuario@ejemplo.com"
+    mydata.password = "123456789";
+    mydata.role=["user"];
+    
+    // Act
+    service.registerUser(mydata).subscribe((user: any) => {
+      console.log("usuario registrado");
     });
 
   });

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {StorageService} from '../servicios/storage.service';
 import { NavbarUsuarioComponent } from './navbar-usuario.component';
 
 describe('NavbarUsuarioComponent', () => {
@@ -22,4 +22,18 @@ describe('NavbarUsuarioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should call cerrarSsion', () => {
+
+    // Arrange
+    let result="";
+    // Act
+    component.cerrarSesion();
+    result=component.result;
+
+    // Assert
+    expect(result).toBe("Sesión cerrada");
+  });
+
+
 });

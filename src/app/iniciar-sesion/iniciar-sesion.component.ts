@@ -11,9 +11,9 @@ import {Router} from "@angular/router";
 })
 export class IniciarSesionComponent implements OnInit {
 
-  result = '';
-  nombreUsuario = '';
-  contrasenia = '';
+  result = "";
+  nombreUsuario = "";
+  contrasenia = "";
 
   constructor(
     private usersService: UsersService,
@@ -28,7 +28,7 @@ export class IniciarSesionComponent implements OnInit {
     var mydata = new UsersApi;
 
     if (this.nombreUsuario == "" || this.contrasenia == "") {
-
+      this.result="USUARIO Y CONTRASEÑA REQUERIDOS";
       alert('USUARIO Y CONTRASEÑA REQUERIDOS');
 
     } else {

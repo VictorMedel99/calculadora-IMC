@@ -9,13 +9,17 @@ import { StorageService } from '../servicios/storage.service';
 export class NavbarUsuarioComponent implements OnInit {
 
   constructor() { }
+  result="";
 
   ngOnInit(): void {
   }
 
   cerrarSesion(){
+    let result ="";
     new StorageService().sessionDeleteAll();
-    console.log("Sesión cerrada");
+    result="Sesión cerrada";
+    this.result=result;
+    console.log(result);
     }
 
 }
