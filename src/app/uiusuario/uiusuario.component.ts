@@ -18,10 +18,11 @@ import {ImcService} from '../servicios/imc.service';
   templateUrl: './uiusuario.component.html',
   styleUrls: ['./uiusuario.component.css']
 })
+
 export class UIUsuarioComponent implements OnInit {
 
   imc=0;
-  result;
+  result="";
   pesomin="";
   pesomax="";
   operadorGenero = "";
@@ -29,10 +30,12 @@ export class UIUsuarioComponent implements OnInit {
   operadorEstatura = 0;
   operadorPeso = 0;
   Estado="";
+  alert="";
 /*   historial=[];
  */
   constructor(private imcService: ImcService) { }
   imcApi$: ImcApi[];
+  
   ngOnInit(): void {
     this.mostrar()
   }
@@ -63,7 +66,8 @@ export class UIUsuarioComponent implements OnInit {
     mydata.username="victor";
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
-          this.mostrar()
+          this.alert="imcsave";
+          this.mostrar();
         })
   }
 

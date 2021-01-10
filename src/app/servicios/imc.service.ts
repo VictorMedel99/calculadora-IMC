@@ -41,33 +41,6 @@ export class ImcService {
     )
   }
 
-/*   getImcs() {
-    console.log( this.storageService.getSession("userData").token);
-    return this.http.get<any>(this.apiURL+'calculator/pesos/',this.httpOptions)
-    .pipe(
-    retry(1),
-    catchError(this.MessageError)
-    )
-  } */
-
-/*   getGeneros(){
-    return this.http.get<any>(this.apiURL + 'calculator/pesos/');
-  } */
-
-  // Error handling 
-  handleError(error) {
-     let errorMessage = '';
-     if(error.error instanceof ErrorEvent) {
-       // Get client-side error
-       errorMessage = error.error.message;
-     } else {
-       // Get server-side error
-       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-     }
-     window.alert(errorMessage);
-     return throwError(errorMessage);
-  }
-
   MessageError(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

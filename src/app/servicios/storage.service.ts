@@ -1,15 +1,22 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+
 export class  StorageService {
 
     constructor(){}
   
     getApiUrl(){
-      return   'https://jwt-api-imc.herokuapp.com/'
+      return   'https://jwt-api-imc.herokuapp.com/';
       //return   'http://201.147.64.84:8083' 
       
     }
 
     setSession(key: string, obj: any) {
       sessionStorage.setItem(key, JSON.stringify(obj))
+      return "key guardado";
     }
   
     getSession(key: string) {
@@ -19,13 +26,15 @@ export class  StorageService {
   
     sessionDeleteAll() {
       sessionStorage.clear();
+      return "sesionStorage clear";
     }
   
-    sessionDeleteByKey(key: string) {
+/*     sessionDeleteByKey(key: string) {
       sessionStorage.removeItem(key);
-    }
+      return "key eliminado"
+    } */
   
-    setLocal(key: string, obj: any) {
+/*     setLocal(key: string, obj: any) {
       localStorage.setItem(key, JSON.stringify(obj));
     }
   
@@ -40,14 +49,14 @@ export class  StorageService {
   
     localDeleteByKey(key: string) {
       localStorage.removeItem(key);
-    }
+    } */
 
     islogged(){
       return !!sessionStorage.getItem("token");
     }
 
     cerrarSesion(){
-    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     //this.router.navigate(['/tasks']);
     }
   }

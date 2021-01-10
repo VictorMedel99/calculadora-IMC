@@ -9,11 +9,14 @@ import { NavbarInicialComponent } from '../app/navbar-inicial/navbar-inicial.com
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { UIUsuarioComponent } from './uiusuario/uiusuario.component';
-
+import { NavbarUsuarioComponent } from './navbar-usuario/navbar-usuario.component';
 import { HttpClientModule } from '@angular/common/http';
+//services
+import {ImcService} from '../app/servicios/imc.service';
+import {UsersService} from '../app/servicios/users.service';
 import { StorageService } from "../app/servicios/storage.service";
 import {VerifyNavGuard} from './servicios/verify-nav.guard';
-import { NavbarUsuarioComponent } from './navbar-usuario/navbar-usuario.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,7 @@ import { NavbarUsuarioComponent } from './navbar-usuario/navbar-usuario.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [StorageService,VerifyNavGuard],
+  providers: [StorageService,UsersService,VerifyNavGuard,ImcService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

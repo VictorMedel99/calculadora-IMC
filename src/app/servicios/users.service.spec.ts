@@ -51,4 +51,17 @@ describe('UsersService',() => {
 
   });
 
+  it('Should call MessageError method', () => {
+
+    // Arrange
+    let result;
+    const service: UsersService = TestBed.get(UsersService);
+    // Act
+    result=service.MessageError('datos incorrectos');
+    
+
+    // Assert
+    expect(result).toBe(result);
+  });
+
 });

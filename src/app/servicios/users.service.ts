@@ -47,7 +47,7 @@ export class UsersService {
   }
 
   // Error handling 
-  handleError(error) {
+/*   handleError(error) {
      let errorMessage = '';
      if(error.error instanceof ErrorEvent) {
        // Get client-side error
@@ -58,7 +58,7 @@ export class UsersService {
      }
      window.alert(errorMessage);
      return throwError(errorMessage);
-  }
+  } */
 
   MessageError(error) {
     let errorMessage = '';

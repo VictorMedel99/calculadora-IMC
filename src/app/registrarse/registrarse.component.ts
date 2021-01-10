@@ -15,6 +15,7 @@ export class RegistrarseComponent implements OnInit {
   correo = '';
   role= ['user'];
   contrasenia = '';
+  alert='';
   
   constructor(
     private usersService: UsersService,
@@ -28,8 +29,8 @@ export class RegistrarseComponent implements OnInit {
     var mydata = new UsersRegisterApi;
 
     if (this.nombreUsuario == "" || this.contrasenia == "" || this.correo == "" || this.nombre == "") {
-
-      alert('DATOS REQUERIDOS NO SE ACEPTAN CAMPOS VACIOS');
+      this.alert='DATOS REQUERIDOS NO SE ACEPTAN CAMPOS VACIOS';
+      alert(this.alert);
 
     } else {
 
@@ -42,7 +43,8 @@ export class RegistrarseComponent implements OnInit {
       this.usersService.registerUser(mydata)
         .subscribe((data: any) => {
         })
-        alert('usuario registrado');
+        this.alert='usuario registrado';
+        alert(this.alert);
         this.router.navigate(['/']);
     }
 

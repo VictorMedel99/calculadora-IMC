@@ -14,6 +14,7 @@ export class IniciarSesionComponent implements OnInit {
   result = "";
   nombreUsuario = "";
   contrasenia = "";
+  alert="";
 
   constructor(
     private usersService: UsersService,
@@ -28,8 +29,8 @@ export class IniciarSesionComponent implements OnInit {
     var mydata = new UsersApi;
 
     if (this.nombreUsuario == "" || this.contrasenia == "") {
-      this.result="USUARIO Y CONTRASEÑA REQUERIDOS";
-      alert('USUARIO Y CONTRASEÑA REQUERIDOS');
+      this.alert="USUARIO Y CONTRASEÑA REQUERIDOS";
+      alert(this.alert);
 
     } else {
 
@@ -40,7 +41,7 @@ export class IniciarSesionComponent implements OnInit {
         .subscribe((data: any) => {
 
           this.storageService.setSession("token", data.accessToken);
-
+          this.alert="logged";
           this.result = data.accessToken;
           this.router.navigate(['usuarios']);
 
