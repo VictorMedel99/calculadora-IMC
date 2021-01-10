@@ -1,0 +1,61 @@
+#historial{
+    padding: 30px;
+    font-size: 16px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.principal{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.operacionesIMC{
+    padding: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.operacionesIMC button{
+    height: 40px;
+}
+
+.peso-bajo{
+    Background:#01b520;
+
+}
+
+.peso-normal{
+    Background: #50df2f;
+
+}
+
+.sobrepeso{
+    Background: #ffff01;
+
+}
+
+.obecidad-1{
+    Background: #ffc801;
+
+}
+
+.obecidad-2{
+    Background: #ff9000;
+
+}
+
+.obecidad-3{
+    Background: #ff2100;
+
+}
+
+.items-imc li a{
+    color: #3F5EFB;
+    font-weight: lighter;
+}

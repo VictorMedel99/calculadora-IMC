@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IMCUIComponent } from './imcui/imcui.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import {UIUsuarioComponent} from './uiusuario/uiusuario.component';
+import {VerifyNavGuard} from './servicios/verify-nav.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +23,11 @@ const routes: Routes = [
   {
     path: "iniciarsesion",
     component: IniciarSesionComponent
+  },
+  {
+    path: "usuarios",
+    component: UIUsuarioComponent,
+    canActivate:[VerifyNavGuard]
   },
 ];
 
