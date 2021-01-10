@@ -1,5 +1,5 @@
 <nav id="navprincipal" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="/landingPage"><i class="icon ion-md-calculator"></i> Calculadora IMC</a>
+    <a class="navbar-brand" routerLink="/usuarios"><i class="icon ion-md-calculator"></i> Calculadora IMC</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
       aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,10 +10,7 @@
   
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/registrate">Regístrarse</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/iniciarsesion">Iniciar Sesión</a>
+        <a class="nav-link" routerLink="/landingPage" (click)="cerrarSesion();">Cerrar Sesión <i class="icon ion-md-home"></i></a>
       </li>
     </ul>
   </nav>

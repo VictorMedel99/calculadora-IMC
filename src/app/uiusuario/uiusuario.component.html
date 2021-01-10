@@ -1,16 +1,4 @@
-<app-navbar-inicial></app-navbar-inicial>
-<header>
-  <section class="info-header">
-    <h1>Calcula tu IMC</h1>
-    <h2>Obtén mas información de interés a través de la sección conoce más en nuestra barra de navegación
-    </h2>
-  </section>
-</header>
-<div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-    style="height: 100%; width: 100%;">
-    <path d="M-17.77,59.70 C139.67,148.52 364.27,-48.84 500.84,66.61 L500.00,150.00 L0.00,150.00 Z"
-      style="stroke: none; fill: #fff;"></path>
-  </svg></div>
+<app-navbar-usuario></app-navbar-usuario>
 <main>
   <section class="contenedor calculadora-inputs">
     <h2 class="title">Ingresa los datos</h2>
@@ -18,7 +6,7 @@
       <h3><span>1</span>Genero</h3>
       <div id="inputs-operators" class="input-group">
         <input id="operadorGenero" [(ngModel)]="operadorGenero" type="text" class="form-control operadorGenero"
-          name="operadorGenero" placeholder="hombre/mujer">
+        name="operadorGenero" placeholder="hombre/mujer">
       </div>
       <h3><span>2</span>Edad</h3>
       <div id="inputs-operators" class="input-group">
@@ -35,10 +23,10 @@
         <input id="operadorPeso" [(ngModel)]="operadorPeso" type="number" class="form-control operadorPeso"
           name="operadorPeso">
       </div>
-      <div id="btn-operations" class="btn-group btn-group-lg">
-        <button type="button" class="btn btn-primary calculaIMC-button" (click)="calculaIMC()"
-          style="text-align:center">Calcula tu IMC</button>
-      </div>
+      <section class="operacionesIMC">
+        <button type="button" class="btn btn-primary calculaIMC-button" (click)="calculaIMC()" >Calcula tu IMC</button>
+        <button id="guardarIMC" type="button" class="btn btn-primary calculaIMC-button" (click)="guardarIMC()">Guarda tu Resultado</button>
+      </section>
     </section>
   </section>
 
@@ -54,7 +42,7 @@
     </section>
 
     <section class="progress-imc">
-      <h2>IMC Hombres +18</h2>
+      <h2>IMC +18</h2>
       <ul class="items-imc">
         <li>
           <a>Bajo peso</a>
@@ -85,38 +73,30 @@
           <span>40+</span>
         </div>
       </div>
-      <br>
-      <h2>IMC Mujeres +18</h2>
-      <ul class="items-imc">
-        <li>
-          <a>Bajo peso</a>
-          <a>Peso normal</a>
-          <a>Sobrepeso</a>
-          <a>Obesidad 1</a>
-          <a>Obesidad 2</a>
-          <a>Obesidad morbida</a>
-        </li>
-      </ul>
-      <div class="progress progress-striped active">
-        <div class="progress-bar peso-bajo" style="width: 16.6%">
-          <span>0,0 - 18.4</span>
-        </div>
-        <div class="progress-bar peso-normal" style="width: 16.6%">
-          <span>18.5 - 24.9</span>
-        </div>
-        <div class="progress-bar sobrepeso" style="width: 16.7%">
-          <span>25.0 - 29.9</span>
-        </div>
-        <div class="progress-bar obecidad-1" style="width: 16.6%">
-          <span>30.0 - 34.9</span>
-        </div>
-        <div class="progress-bar obecidad-2" style="width: 16.8%">
-          <span>35.0 - 39.9</span>
-        </div>
-        <div class="progress-bar obecidad-3" style="width: 16.7%">
-          <span>40+</span>
-        </div>
-      </div>
     </section>
   </section>
 </main>
+
+
+<h1 class="principal">Registros</h1>
+<table id="historial" class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">IMC</th>
+      <th scope="col">Estado Actual</th>
+      <th scope="col">Peso Minimo Ideal</th>
+      <th scope="col">Peso Maximo Ideal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let peso of imcApi$'>
+      <td>{{peso.id}}</td>
+      <td>{{peso.username}}</td>
+      <td>{{peso.imc}}</td>
+      <td>{{peso.estado}}</td>
+      <td>{{peso.peso_min}}</td>
+      <td>{{peso.peso_max}}</td>
+  </tbody>
+</table>
