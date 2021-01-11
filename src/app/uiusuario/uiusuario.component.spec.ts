@@ -145,7 +145,7 @@ describe('UIUsuarioComponent', () => {
     result = component.alert;
 
     // Assert
-    expect(result).toBe('imcsave');
+    expect(result).toBe('IMC Save');
   });
 
 
