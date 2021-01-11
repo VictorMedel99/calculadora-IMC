@@ -1,7 +1,7 @@
 <app-navbar-usuario></app-navbar-usuario>
 <main>
   <section class="contenedor calculadora-inputs">
-    <h2 class="title">Ingresa los datos</h2>
+    <h2 class="title">Ingresa tus datos</h2>
     <section class="contenido-calculadora-inputs">
       <h3><span>1</span>Genero</h3>
       <div id="inputs-operators" class="input-group">
@@ -26,6 +26,7 @@
       <section class="operacionesIMC">
         <button type="button" class="btn btn-primary calculaIMC-button" (click)="calculaIMC()" >Calcula tu IMC</button>
         <button id="guardarIMC" type="button" class="btn btn-primary calculaIMC-button" (click)="guardarIMC()">Guarda tu Resultado</button>
+        <button id="mostrar2" type="button" class="btn btn-primary calculaIMC-button" (click)="mostrar2()">Mostrar</button>
       </section>
     </section>
   </section>
@@ -91,7 +92,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor = 'let peso of imcApi$'>
+    <tr *ngFor = 'let peso of imcF$'>
       <td>{{peso.id}}</td>
       <td>{{peso.username}}</td>
       <td>{{peso.imc}}</td>
