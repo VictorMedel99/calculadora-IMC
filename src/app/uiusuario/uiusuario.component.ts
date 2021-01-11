@@ -66,7 +66,7 @@ export class UIUsuarioComponent implements OnInit {
     mydata.username="victor";
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
-          this.alert="imcsave";
+          this.alert="IMC Save";
           this.mostrar();
         })
   }
