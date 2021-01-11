@@ -12,6 +12,7 @@ import { pesoMaxMujer } from '../IMCMujer/IMCMujer';
 
 import { ImcApi } from "../models/imcapi";
 import {ImcService} from '../servicios/imc.service';
+import { StorageService } from '../servicios/storage.service';
 
 @Component({
   selector: 'app-uiusuario',
@@ -33,11 +34,13 @@ export class UIUsuarioComponent implements OnInit {
   alert="";
 /*   historial=[];
  */
-  constructor(private imcService: ImcService) { }
-  imcApi$: ImcApi[];
+  constructor(private imcService: ImcService,private storageService: StorageService) { }
+  imcApi$ = new Array<ImcApi>();
+  imcF$= new Array<ImcApi>();
   
   ngOnInit(): void {
-    this.mostrar()
+    this.mostrar();
+    this.mostrar2();
   }
 
   calculaIMC() {
@@ -63,18 +66,29 @@ export class UIUsuarioComponent implements OnInit {
     mydata.estado=this.Estado;
     mydata.peso_min=this.pesomin;
     mydata.peso_max=this.pesomax;
-    mydata.username="victor";
+    mydata.username=this.storageService.getSession("username");
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
-          this.alert="imcsave";
+          this.alert="IMC Save";
+          alert(this.alert);
           this.mostrar();
+          this.mostrar2();
         })
   }
 
     mostrar(){
       return this.imcService.getPesos()
       .subscribe(
-        data => this.imcApi$ = data)
+        data => this.imcApi$ = data
+        )
      }
 
+     mostrar2(){
+       this.imcF$=[];
+      for (var i=0 ; i < this.imcApi$.length; i++) {
+        if (this.imcApi$[i].username == this.storageService.getSession("username")) {
+          this.imcF$.push(this.imcApi$[i]);
+        }
+     }
+     }
 }
