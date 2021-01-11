@@ -39,7 +39,7 @@ export class IniciarSesionComponent implements OnInit {
 
       return this.usersService.loginUser(mydata)
         .subscribe((data: any) => {
-
+          this.storageService.setSession("username",this.nombreUsuario);
           this.storageService.setSession("token", data.accessToken);
           this.alert="logged";
           this.result = data.accessToken;
