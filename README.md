@@ -1,3 +1,8 @@
+# Documentación
+ [Visión y Alcance Del Proyecto](https://drive.google.com/file/d/1aw52tMhg_9YrB2C6EhlX19B3ICuXEQ9A/view?usp=sharing)
+
+ [Link firebase app calculadora IMC] https://calcula-tu-imc.web.app/
+
 # CalculadoraIMC
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
