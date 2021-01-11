@@ -39,8 +39,8 @@ export class UIUsuarioComponent implements OnInit {
   imcF$= new Array<ImcApi>();
   
   ngOnInit(): void {
-    this.mostrar()
-    this.mostrar2()
+    this.mostrar();
+    this.mostrar2();
   }
 
   calculaIMC() {
@@ -69,7 +69,8 @@ export class UIUsuarioComponent implements OnInit {
     mydata.username=this.storageService.getSession("username");
     return this.imcService.createImc(mydata)
         .subscribe((data: any) => {
-          this.alert="imcsave";
+          this.alert="IMC Save";
+          alert(this.alert);
           this.mostrar();
           this.mostrar2();
         })
@@ -83,6 +84,7 @@ export class UIUsuarioComponent implements OnInit {
      }
 
      mostrar2(){
+       this.imcF$=[];
       for (var i=0 ; i < this.imcApi$.length; i++) {
         if (this.imcApi$[i].username == this.storageService.getSession("username")) {
           this.imcF$.push(this.imcApi$[i]);
